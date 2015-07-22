@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sudokuSolver">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-cloak>
+  <div class="container" ng-controller="MainController as main">
+    <header class="main-header">
+      <h1>
+        Welcome
+      </h1>
+    </header>
+
+    <section class="game">
+      <div>
+          <button class="btn" ng-click="main.showSudoku()">Click me to start</button>
+      </div>
+        <div ng-repeat="row in main.board track by $index">
+            <span ng-repeat="col in row track by $index">
+                <span>{{col}}</span>
+
+
+            </span>
+        </div>
+    </section>
+
+  </div>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

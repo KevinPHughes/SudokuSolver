@@ -1,0 +1,24 @@
+{
+  "name": "sudokuSolver",
+  "version": "1.0.0",
+  "description": "Solve sudoku puzzles",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -e js,html",
+    "start": "node ./server.js"
+  },
+  "author": "Kevin Hughes",
+  "license": "ISC",
+  "homepage": "https://github.com/KevinPHughes/SudokuSolver",
+  "dependencies": {
+    "angular": "^1.4.1",
+    "browserify-middleware": "^6.0.0",
+    "coffeeify": "^1.1.0",
+    "ejs": "^2.3.3",
+    "express": "^4.12.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.3.7"
+  }
+}
