@@ -1,3 +1,37 @@
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none !important;
 }
+
+.table {
+    border: 1px solid #dddddd;
+}
+
+.table tr {
+    padding: 0px;
+}
+
+.table tr:nth-child(3n):not(:last-child) td {
+    border-bottom: 1px solid black;
+}
+
+.table tr td {
+    width: 45px;
+    border: 1px solid #dddddd;
+    padding: 0px;
+    text-align: center;
+}
+
+.table tr td:nth-child(3n):not(:last-child) {
+    border-right: 1px solid black;
+}
+
+table tr td input {
+    width: 90%;
+    height: 90%;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.sudokuRow input {
+    width: 100%;
+}

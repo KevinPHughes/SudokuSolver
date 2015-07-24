@@ -16,21 +16,24 @@
 
     <section class="game">
       <div>
-          <button class="btn" ng-click="main.showSudoku()">Click me to start</button>
+          <button ng-click="main.showSudoku()">Click me to start</button>
+          <button ng-click="main.resetBoard()">Reset game</button>
       </div>
-        <div ng-repeat="row in main.board track by $index">
-            <span ng-repeat="col in row track by $index">
-                <span>{{col}}</span>
+        <table class="table">
+            <tbody>
+                <tr ng-repeat="row in main.board track by $index">
+                    <td ng-repeat="col in row track by $index">
+                        <span ng-if="col > 0">{{col}}</span>
+                        <input type="number" ng-if="col == 0" go-to-next-input />
+                    </td>
 
+                </tr>
+            </tbody>
 
-            </span>
-        </div>
+        </table>
     </section>
 
   </div>
   <script src="app.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

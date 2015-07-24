@@ -1,4 +1,8 @@
 angular = require('angular');
 
-angular.module('sudokuSolver', [])
+window.sudokuSolver = angular.module('sudokuSolver', [])
   .controller('MainController', require('./mainController.coffee'))
+  .service('sudokuService', require('./sudokuService.coffee'))
+
+
+require('./directives.coffee')
