@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.3
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -39139,6 +39139,7 @@ window.sudokuSolver = angular.module('sudokuSolver', []).controller('MainControl
 require('./directives.coffee');
 
 
+
 },{"./directives.coffee":6,"./mainController.coffee":7,"./sudokuService.coffee":8,"angular":2}],6:[function(require,module,exports){
 var $;
 
@@ -39147,11 +39148,11 @@ $ = require('jquery');
 sudokuSolver.directive("goToNextInput", function() {
   return function(scope, elm, attr) {
     return $(elm).on('keyup', function() {
-      $(this).parent().next().find('input').focus();
-      return inputs.eq(inputs.index(this) + 1).focus();
+      return $(this).parent().next().find('input').focus();
     });
   };
 });
+
 
 
 },{"jquery":3}],7:[function(require,module,exports){
@@ -39183,6 +39184,7 @@ module.exports = function(sudokuService) {
   this.transformStringToBoardArray(board);
   return this;
 };
+
 
 
 },{"underscore":4}],8:[function(require,module,exports){
@@ -39293,4 +39295,5 @@ module.exports = function() {
 };
 
 
-},{"underscore":4}]},{},[5]);
+
+},{"underscore":4}]},{},[5])
