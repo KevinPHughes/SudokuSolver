@@ -9,7 +9,9 @@ module.exports = (sudokuService) ->
         @board[index] = row.split('').map(Number)
 
     @showSudoku = ->
+      start = new Date()
       sudokuService.solve(@board)
+      console.log("Finished in #{new Date() - start} ms")
 
     @resetBoard = ->
       board = '000000000,000000000,000000000,000000000,000000000,000000000,000000000,000000000,000000000'

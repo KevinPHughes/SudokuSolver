@@ -39148,7 +39148,10 @@ $ = require('jquery');
 sudokuSolver.directive("goToNextInput", function() {
   return function(scope, elm, attr) {
     return $(elm).on('keyup', function() {
-      return $(this).parent().next().find('input').focus();
+      if (event.keyCode === 9 || event.keyCode === 16 || event.keyCode === 8) {
+        return;
+      }
+      return $(this).parent().next().find('input').focus().select();
     });
   };
 });
@@ -39173,7 +39176,10 @@ module.exports = function(sudokuService) {
     })(this));
   };
   this.showSudoku = function() {
-    return sudokuService.solve(this.board);
+    var start;
+    start = new Date();
+    sudokuService.solve(this.board);
+    return console.log("Finished in " + (new Date() - start) + " ms");
   };
   this.resetBoard = function() {
     var board;
@@ -39282,11 +39288,9 @@ module.exports = function() {
       }
       if (!found) {
         board[row][col] = 0;
-        i--;
-        results.push(console.log('Rolling back to ', i));
+        results.push(i--);
       } else {
-        i++;
-        results.push(console.log('Increasing to ', i));
+        results.push(i++);
       }
     }
     return results;

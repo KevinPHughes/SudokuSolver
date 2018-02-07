@@ -23,8 +23,7 @@
             <tbody>
                 <tr ng-repeat="row in main.board track by $index">
                     <td ng-repeat="col in row track by $index">
-                        <span ng-if="col > 0">{{col}}</span>
-                        <input type="number" ng-if="col == 0" go-to-next-input />
+                        <input type="number" ng-model="row[$index]" ng-focus="this.select()" go-to-next-input onclick="this.select()"  />
                     </td>
 
                 </tr>

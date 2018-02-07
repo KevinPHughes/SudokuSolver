@@ -72,9 +72,7 @@ module.exports = () ->
       if !found
         board[row][col] = 0
         i--
-        console.log 'Rolling back to ', i
       else
         i++
-        console.log 'Increasing to ', i
 
   @

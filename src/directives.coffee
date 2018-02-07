@@ -3,6 +3,6 @@ $ = require('jquery')
 sudokuSolver.directive "goToNextInput", ->
   (scope, elm, attr) ->
     $(elm).on('keyup', ()->
-      $(this).parent().next().find('input').focus()
-      #inputs.eq( inputs.index(this)+ 1 ).focus()
+      return if event.keyCode == 9 || event.keyCode == 16 || event.keyCode == 8
+      $(this).parent().next().find('input').focus().select()
     )
